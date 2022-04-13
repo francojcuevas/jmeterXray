@@ -1,6 +1,6 @@
 #!/bin/bash
-
-projectFile=$1
-csvFIle=$2
+csvFIle=$1
+projectFile=$2
 reportFIle=$3
-docker run --rm -v $WORKSPACE/jmeterPrueba:/workspace swethapn14/repo_perf:JmeterLatest -Jjmeter.save.saveservice.output_format=xml -Jcsvfile=/workspace/csvFile -n -t /workspace/$projectFile -l /workspace/$reporteFile
+docker run --rm -v $WORKSPACE:/workspace swethapn14/repo_perf:JmeterLatest -Jjmeterengine.stopfail.system.exit=true -Jcsvfile=/workspace/$csvFile -n -t /workspace/$projectName -l /workspace/$reportFile
+java -jar jmeter-junit-xml-converter-0.0.1-SNAPSHOT-jar-with-dependencies.jar reportejenkins.jtl reportejenkinsconvertido.xml
