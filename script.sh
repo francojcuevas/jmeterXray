@@ -2,7 +2,7 @@
 csvFile=$1
 projectFile=$2
 reportFile=$3
-var_date=$(date +%c)
+#var_date=$(date +%c)
 rm $reportFile
 docker run --rm -v $WORKSPACE:/workspace swethapn14/repo_perf:JmeterLatest -Jjmeterengine.stopfail.system.exit=true -Jcsvfile=/workspace/$csvFile -n -t /workspace/$projectName -l /workspace/$reportFile
 rm reportejenkinsconvertido.xml
